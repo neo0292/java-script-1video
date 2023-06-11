@@ -1,0 +1,28 @@
+body {
+  background-color: rgb(25,25,25);
+  color : white;
+}
+
+.title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.resize-image {
+  height: 90px;
+  background-color : transparent;
+  
+}
+
+.btn-img {
+  margin-right: 10px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.btn-reset{
+  background-color: green;
+  padding: 20px;
+  margin: 10px;
+}

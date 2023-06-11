@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDo list</title>
+  <link rel="stylesheet" href="styles\todolist.css">
+</head>
+
+<body>
+  <p>To do list</p>
+  <input placeholder="enter here" class="js-input css-input">
+  <input type="date" class="js-duedate-input css-inputdate">
+
+  <button class="js-add css-add"
+    onclick="add()"
+  >Add</button>
+
+  <div class="js-todolist todo-grid"></div>
+  
+  <script>
+    const todolist = [
+      { name: 'make dinner',
+        duedate: '2023-06-16'
+      },
+      { name: 'sachin',
+        duedate: '2023-07-08'
+
+      }
+      ];
+
+    rendertodolist();
+    function rendertodolist(){
+    let todolisthtml = '';
+    for ( let i=0;i<todolist.length;i++){
+      const todoObject = todolist[i];
+      // const name = todoObject.name;
+      // const duedate =todoObject.duedate; 
+      const {name, duedate} = todoObject; //same as above 2 lines
+      const html = `
+      <div>
+        ${name} 
+      </div>  
+        ${duedate} 
+        <button onclick="
+          todolist.splice(${i}, 1);
+          rendertodolist(); class="css-delete-button"
+        ">Delete</button>
+        
+        </>`;
+      todolisthtml += html;
+    }
+
+    //console.log(todolisthtml);
+    
+    document.querySelector('.js-todolist').innerHTML = todolisthtml;
+
+  }  
+
+    function add() {
+         
+      const inputElement = document.querySelector('.js-input');
+      const name = inputElement.value;
+
+      const inputdate = document.querySelector('.js-duedate-input');
+      const duedate = inputdate.value;
+
+      todolist.push({
+        // duedate: duedate
+        // same as above 2 lines as property & value name are same
+        name,
+        duedate
+      });
+      //console.log(todolist);
+
+      inputElement.value = '';// make inputbox blank after clicking add button
+
+      rendertodolist(); 
+        
+    }
+      
+        
+
+      
+    
+    
+    
+
+
+  </script>
+</body>
+</html>

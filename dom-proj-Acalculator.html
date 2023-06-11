@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon Shipping Calculator</title>
+</head>
+<body>
+
+  <style>
+    input{
+      padding: 10px;
+      size: 100px;
+    }
+    
+    button{
+      padding : 10px;
+      background-color: green;
+      color: white;
+    }
+  </style>
+
+
+
+
+  <p>Amazon Shipping Calculator</p>
+  <input placeholder="Enter Amount"
+    class="js-input" onkeydown="
+      handleEnter(event);
+    ">
+
+  <button onclick="
+    calculate();
+  
+  ">Calculate</button>
+  
+  <p class="js-shipingTotal"></p>
+
+  
+  
+  
+  <script>
+    function handleEnter(event){
+      if (event.key === 'Enter'){
+        calculate();
+      }
+    }
+
+    function calculate(){
+      const inputElement = document.querySelector('.js-input');
+      console.log(inputElement);
+      let cost = Number(inputElement.value)
+      if(cost<40 && cost >0){
+        cost = cost + 10;
+      } else (cost = cost)
+
+      document.querySelector('.js-shipingTotal').innerHTML = `Total cost Rs.${cost}`
+    }
+  </script>
+  
+</body>
+</html>

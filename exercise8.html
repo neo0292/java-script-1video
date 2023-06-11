@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>objects</title>
+</head>
+<body>
+  
+  <script>
+    const basketball = {
+      name: 'basketball',
+      price : 2095
+    };
+    console.log(basketball);
+    basketball.price =50000;
+    console.log(basketball);
+    basketball['delivery-time'] = '3 days';
+    console.log(basketball);
+
+    const basketball2 = {
+      name: 'bas2',
+      price: 1250
+    };
+
+    function comparePrice(product1, product2) {
+      if (product1.price < product2.price){
+        return product1
+      } else return product2 
+    }
+    console.log(comparePrice(basketball,basketball2));
+
+    const result = comparePrice(basketball,basketball2);
+    console.log('less expensive product is' + result.name);
+
+  </script>
+</body>
+</html>

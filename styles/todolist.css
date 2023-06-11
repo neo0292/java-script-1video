@@ -1,0 +1,39 @@
+body{
+    font-family:Arial, Helvetica, sans-serif
+}
+
+.css-input{
+  font-size: 20px;
+  padding: 8px;
+}
+
+.css-inputdate{
+  font-size: 20px;
+  padding: 7px;
+
+}
+
+.css-add {
+  color: white;
+  background-color: green;
+  padding: 5px 20px;
+  font-size: 25px;
+  border: none;
+  
+}
+
+.todo-grid {
+  margin: 10px;
+  grid-gap: 10px;
+  display: grid;
+  grid-template-columns: 260px 162px 85px;
+}
+
+.css-delete-button{
+  background-color: red;
+  color: white;
+  padding: 5px 5px;
+
+}
+
+
